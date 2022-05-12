@@ -2,17 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="XamarinFormsExercises.Views.ListViews.ListViewImageExercisePage"
+              xmlns:view="using:XamarinFormsExercises.Views.ListViews"
+             xmlns:home="using:XamarinFormsExercises.Views"
              Padding="20">
     <StackLayout>
-        <ListView x:Name="ImageList" ItemTapped="ImageList_ItemTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="25,10,55,15">
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <ScrollView>
+
+            <ListView x:Name="ImageList" ItemsSource="{Binding CityList}" BackgroundColor="Transparent" HasUnevenRows="True" ItemTapped="ImageList_ItemTapped"  VerticalOptions="Fill">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="5" HasShadow="True" CornerRadius="20">
+                                <StackLayout Spacing="10" HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,5,55,5">
+                                    <StackLayout HorizontalOptions="Center" Orientation="Vertical" Padding="3">
+                                        <Image Source="{Binding ImageSrc}" WidthRequest="100" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" Padding="5">
+                                        <Label VerticalOptions="CenterAndExpand" HorizontalOptions="End" FontSize="20" Text="{Binding Name}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </ScrollView>
+
+        <Frame BorderColor="Red" HasShadow="True" WidthRequest="50">
+
+            <StackLayout>
+                <Button Text="Next" Clicked="Button_Clicked" CommandParameter="{x:Type view:ListViewButtonExercisePage}" />
+                <Button Text="Back" Clicked="Button_Clicked_1" CommandParameter="{x:Type view:ListViewDataModelExercisePage}"/>
+            </StackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

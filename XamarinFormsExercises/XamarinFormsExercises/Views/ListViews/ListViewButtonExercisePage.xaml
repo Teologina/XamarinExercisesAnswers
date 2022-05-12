@@ -1,18 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage	xmlns="http://xamarin.com/schemas/2014/forms" 
 				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                xmlns:view="using:XamarinFormsExercises.Views"
 				x:Class="XamarinFormsExercises.Views.ListViews.ListViewButtonExercisePage"
-				Padding="20">
+                xmlns:Views="using:XamarinFormsExercises.Views.ListViews"
+               xmlns:home="using:XamarinFormsExercises.Views"
+				Padding="0,10,0,10">
     <StackLayout>
         <ListView x:Name="ButtonList" RowHeight="100" HasUnevenRows="true" ItemTapped="ButtonList_ItemTapped" >
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<ViewCell>
-						<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="5,10,5,15">
- 						</StackLayout>
-					</ViewCell>
-				</DataTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="10,10,5,15">
+                            <StackLayout HorizontalOptions="Start" Orientation="Vertical">
+                                <Image Source="{Binding ImageSrc}" HorizontalOptions="Start" WidthRequest="90" />
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="Start">
+                                <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold"/>
+                                <Label Text="{Binding Continent}" FontSize="16" FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="EndAndExpand" Orientation="Vertical" WidthRequest="210">
+                                <Button Text="Learn More" HorizontalOptions="EndAndExpand" x:Name="LearnMoreButton"
+                                        Clicked="LearnMoreButton_Clicked"
+                                        CommandParameter="{Binding .}"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
+        <Frame BorderColor="Red" HasShadow="True" WidthRequest="50">
+
+            <StackLayout>
+                <Button Text="Next" Clicked="Button_Clicked" CommandParameter="{x:Type Views:ListViewGroupedExercisePage}" />
+                <Button Text="Back" Clicked="Button_Clicked_1" CommandParameter="{x:Type Views:ListViewImageExercisePage}"/>
+            </StackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

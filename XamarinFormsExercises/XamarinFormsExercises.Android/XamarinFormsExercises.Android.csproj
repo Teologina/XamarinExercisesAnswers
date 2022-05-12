@@ -91,21 +91,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\drawable\Bangkok.jpg" />
-    <Content Include="Resources\drawable\Bombay.jpg" />
-    <Content Include="Resources\drawable\BuenosAires.jpg" />
-    <Content Include="Resources\drawable\Canberra.jpg" />
-    <Content Include="Resources\drawable\CapeTown.jpg" />
-    <Content Include="Resources\drawable\first.png" />
-    <Content Include="Resources\drawable\LosAngeles.jpg" />
-    <Content Include="Resources\drawable\NewYork.jpg" />
-    <Content Include="Resources\drawable\SaoPaulo.jpg" />
-    <Content Include="Resources\drawable\second.png" />
-    <Content Include="Resources\drawable\Stockholm.jpg" />
-    <Content Include="Resources\drawable\Sydney.jpg" />
-    <Content Include="Resources\drawable\third.png" />
-    <Content Include="Resources\drawable\Tunis.jpg" />
-    <Content Include="Resources\drawable\Uppsala.jpg" />
+    <AndroidResource Include="Resources\drawable\Bangkok.jpg" />
+    <AndroidResource Include="Resources\drawable\Bombay.jpg" />
+    <AndroidResource Include="Resources\drawable\BuenosAires.jpg" />
+    <AndroidResource Include="Resources\drawable\Canberra.jpg" />
+    <AndroidResource Include="Resources\drawable\CapeTown.jpg" />
+    <AndroidResource Include="Resources\drawable\first.png" />
+    <AndroidResource Include="Resources\drawable\LosAngeles.jpg" />
+    <AndroidResource Include="Resources\drawable\NewYork.jpg" />
+    <AndroidResource Include="Resources\drawable\SaoPaulo.jpg" />
+    <AndroidResource Include="Resources\drawable\second.png" />
+    <AndroidResource Include="Resources\drawable\Stockholm.jpg" />
+    <AndroidResource Include="Resources\drawable\Sydney.jpg" />
+    <AndroidResource Include="Resources\drawable\third.png" />
+    <AndroidResource Include="Resources\drawable\Tunis.jpg" />
+    <AndroidResource Include="Resources\drawable\Uppsala.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

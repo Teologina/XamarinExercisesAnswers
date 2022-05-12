@@ -2,8 +2,11 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsExercises.Views.Navigation.TabbedContentExercisePage"
+            xmlns:viewmodels="XamarinFormsExercises.Models"
             Title="City Population">
- 
+
+
+    
     <TabbedPage.ItemTemplate>
         <DataTemplate>
             <ContentPage Title="{Binding Name}">
@@ -15,6 +18,9 @@
                         </Style>
                     </ResourceDictionary>
                 </ContentPage.Resources>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Label Text="{Binding Population}"/>
+                </StackLayout>
             </ContentPage>
         </DataTemplate>
     </TabbedPage.ItemTemplate>

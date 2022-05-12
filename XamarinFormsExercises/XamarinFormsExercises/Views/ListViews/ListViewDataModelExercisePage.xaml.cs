@@ -16,9 +16,12 @@ namespace XamarinFormsExercises.Views.ListViews
         {
             InitializeComponent();
 
+
+
+
             CityList = CityPopulation.List;
 
-            //DataModelList.ItemsSource = CityPopulation.List;
+            DataModelList.ItemsSource = CityPopulation.List;
             BindingContext = this;
         }
 
@@ -28,6 +31,20 @@ namespace XamarinFormsExercises.Views.ListViews
             await DisplayAlert("Tapped", item.ToString(), "OK");
 
             ((ListView)sender).SelectedItem = null;
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            Type page = ((Button)sender).CommandParameter as Type;
+            Page pageType = (Page)Activator.CreateInstance(page);
+            await this.Navigation.PushAsync(pageType);
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Type page = ((Button)sender).CommandParameter as Type;
+            Page pageType = (Page)Activator.CreateInstance(page);
+            await this.Navigation.PushAsync(pageType);
         }
 
 

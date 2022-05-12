@@ -2,20 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsExercises.Views.ListViews.ListViewGroupedExercisePage"
+             xmlns:view="using:XamarinFormsExercises.Views"
+             xmlns:Views="using:XamarinFormsExercises.Views.ListViews"
+               xmlns:home="using:XamarinFormsExercises.Views"
+
              Padding="20">
-    <ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness">
-            <On Platform="iOS">10,20,10,5</On>
-            <On Platform="Android">10,0,10,5</On>
-        </OnPlatform>
-    </ContentPage.Padding>
+    <StackLayout>
     <ListView x:Name="CustomGroupedList" IsGroupingEnabled="true" HasUnevenRows="true" ItemTapped="ListViewItemTapped">
         <ListView.GroupHeaderTemplate>
             <DataTemplate>
                 <ViewCell Height="40">
                     <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="40" BackgroundColor="White" 
-                                 Padding="5" Orientation="Horizontal">
-                        <Label FontSize="16" TextColor="Blue" VerticalOptions="Center" Text="{Binding Key}" />
+                                  Orientation="Horizontal">
+                        <Label FontSize="25" TextColor="Blue" FontAttributes="Bold" VerticalOptions="Center" Text="{Binding Key}" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
@@ -23,10 +22,35 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="5,10,5,15">
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <StackLayout HorizontalOptions="Start" Orientation="Vertical">
+                            <Image Source="{Binding ImageSrc}" HorizontalOptions="Start" WidthRequest="90" />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start">
+                            <Label Text="{Binding Name}" FontSize="15" FontAttributes="Bold"/>
+                            <Label Text="{Binding Continent}" FontSize="16" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand" Orientation="Vertical" WidthRequest="210">
+                            <Button Text="Learn More" HorizontalOptions="EndAndExpand" x:Name="LearnMoreButton"
+                                        Clicked="LearnMoreButton_Clicked"
+                                        CommandParameter="{Binding .}"/>
+                            
+                        </StackLayout>
+
                     </StackLayout>
                 </ViewCell>
+    
             </DataTemplate>
         </ListView.ItemTemplate>
+        
     </ListView>
+
+        <Frame BorderColor="Red" HasShadow="True" WidthRequest="50">
+
+            <StackLayout>
+                <Button Text="Back" Clicked="Button_Clicked" CommandParameter="{x:Type Views:ListViewButtonExercisePage}" />
+                <Button Text="Home" Clicked="HomeButton_Clicked" CommandParameter="{x:Type home:MainPage}"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
 </ContentPage>

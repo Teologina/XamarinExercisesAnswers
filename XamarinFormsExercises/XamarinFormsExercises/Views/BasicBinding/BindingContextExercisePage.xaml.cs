@@ -7,6 +7,7 @@ namespace XamarinFormsExercises.Views.BasicBinding
         public BindingContextExercisePage()
         {
             InitializeComponent();
+            CPage.BindingContext = slider;
         }
     }
 }

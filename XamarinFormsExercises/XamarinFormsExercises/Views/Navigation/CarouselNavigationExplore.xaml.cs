@@ -10,9 +10,9 @@ namespace XamarinFormsExercises.Views.Navigation
 		public CarouselNavigationExplore ()
 		{
 			InitializeComponent ();
-			this.Children.Add(new WebViewExplorePage("http://www.svd.se"));
-			this.Children.Add(new WebViewExplorePage("http://www.dn.se"));
-			this.Children.Add(new WebViewExplorePage("http://www.cnn.com"));
+			this.Children.Add(new WebViewExplorePage("https://www.svd.se"));
+			this.Children.Add(new WebViewExplorePage("https://www.dn.se"));
+			this.Children.Add(new WebViewExplorePage("https://www.cnn.com"));
 		}
 	}
 }

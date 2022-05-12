@@ -81,9 +81,15 @@
                 </Picker.ItemsSource>
             </Picker>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Vertical" HorizontalOptions="Start">
             <Label x:Name="lblPropChanged" Text="Property Changed" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
-            <BoxView x:Name="bwPropChanged" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <!--
+            <Label x:Name="lblPropChanged" IsVisible="{Binding Source={x:Reference checkbox}, Path=IsChecked}"  Text="{Binding Source={x:Reference checkbox}, Path=IsChecked, StringFormat='checkbox is toggled: {0}'}"  FontSize="Large" FontAttributes="Bold"/>
+            <Label x:Name="lblPropChanged2" IsVisible="{Binding Source={x:Reference switch}, Path=IsToggled}" Text="{Binding Source={x:Reference switch}, Path=IsToggled, StringFormat='switch is toggled: {0}'}" FontSize="Large" FontAttributes="Bold"/>
+            <Label x:Name="lblPropChanged3" Opacity="{Binding Source={x:Reference slider}, Path=Value}" Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='Slider opacity value is: {0}'}" FontSize="Large" FontAttributes="Bold"/>
+            <Label x:Name="lblPropChanged4" Text="{Binding Source={x:Reference picker}, Path=SelectedItem, StringFormat='Picker changed and is now {0}'}" FontSize="Large" FontAttributes="Bold" />
+            -->
+            <BoxView x:Name="bwPropChanged"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

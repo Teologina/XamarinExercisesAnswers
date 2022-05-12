@@ -8,16 +8,18 @@ Title="StackLayout Demo - XAML">
         <StackLayout Spacing="10">
             <BoxView Color="Yellow" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
             <BoxView Color="Green" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-            <StackLayout>
-                <BoxView Color="Blue" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+            
+            <StackLayout Rotation="50">
+                <BoxView Color="Blue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
                 <BoxView Color="Aqua" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
             </StackLayout>
             <BoxView Color="Bisque" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
-            <StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
                 <BoxView Color="DarkSalmon" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
                 <BoxView Color="LightCoral" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
                 <BoxView Color="Fuchsia" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
-                <StackLayout>
+                <StackLayout Orientation="Vertical">
                     <BoxView Color="LightBlue" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
                     <BoxView Color="LightPink" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
                     <BoxView Color="SaddleBrown" VerticalOptions="End" HorizontalOptions="FillAndExpand" />

@@ -7,26 +7,34 @@ Title="RelativeLayout Exercise">
         <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <BoxView Color="Blue" HeightRequest="50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+				RelativeLayout.XConstraint= "{ConstraintExpression Type=Constant, Property=Width, Factor = 0}"
+	            RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Property=Height, Factor = 0}" />
             <BoxView Color="Red" HeightRequest="50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .9}"
+				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .99}"
 	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
             <BoxView Color="Purple" x:Name="middleBox"
 				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .25}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .5}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .5}"
 	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .25}" />
-            <BoxView Color="Green" HeightRequest="50" WidthRequest="50" 
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .9}" />
+
+            <BoxView Color="Pink" x:Name="pinkBox"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.20, Constant=10}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.2, Constant=20}"
+                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=middleBox, Property=X, Constant=15}"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=middleBox, Property=Y, Constant=50}"/>
+
+
             <BoxView Color="Yellow" HeightRequest="50" WidthRequest="50" 
 				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .9}"
 	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .9}" />
+            <BoxView Color="Green" HeightRequest="50" WidthRequest="50" 
+				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}"
+	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .9}" />
             <BoxView Color="Gray" WidthRequest="15" x:Name="pole"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.75}"
-				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .45}"
-	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .25}" />
+				RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = .18}"
+	            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = .10}" />
             <BoxView Color="Green"
 	        	RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.10, Constant=10}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.2, Constant=20}"

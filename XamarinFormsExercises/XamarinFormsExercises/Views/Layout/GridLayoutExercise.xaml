@@ -3,38 +3,102 @@
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 x:Class="XamarinFormsExercises.Views.Layout.GridLayoutExercise" Title="Grid Exercise">
     <ContentPage.Content>
+
         <StackLayout>
-            <Image Source="Bombay.jpg" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="150"/>
             <Grid>
+
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="*"/>
+                    
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="7*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <StackLayout BackgroundColor="Green" Grid.Row="0" Grid.Column="0">
-                    <Label Text="Top Left" FontSize="20" />
+                
+                <StackLayout>
+
+                    <Image x:Name="gridImage" Source="NewYork.jpg" 
+                           HeightRequest="150"
+                       Aspect="AspectFill"
+                       />
                 </StackLayout>
-                <StackLayout BackgroundColor="Salmon" Grid.Row="0" Grid.Column="2">
-                    <Label Text="Top Right" FontSize="20" />
+                <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="Green">
+                    <Label FontSize="Large" FontAttributes="Bold" TextColor="Gainsboro" Text="Row0 col 1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
-                <StackLayout BackgroundColor="Yellow" Grid.Row="1" Grid.ColumnSpan="3">
-                    <Label Text="One Row in the middle" FontSize="20" HorizontalOptions="Center" />
+
+                <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="red">
+                    <Label FontSize="Large" FontAttributes="Bold" TextColor="Gainsboro" Text="Row1 col1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
-                <StackLayout BackgroundColor="Purple" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
-                    <Label Text="One Column in the middle" HorizontalOptions="Center" FontSize="20" />
+                
+                <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="Blue">
+                    <Label FontSize="Large" FontAttributes="Bold" TextColor="Gainsboro" Text="Row2 col1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
-                <StackLayout BackgroundColor="SaddleBrown" Grid.Row="2" Grid.Column="0">
-                    <Label Text="Bottom Left" FontSize="20" />
+                
+                <StackLayout Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" BackgroundColor="Yellow">
+                    <Label Text="Row1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
-                <StackLayout BackgroundColor="IndianRed" Grid.Row="2" Grid.Column="2">
-                    <Label Text="Bottom Right" FontSize="20" />
+
+                <StackLayout Grid.Row="9" Grid.Column="0" Grid.RowSpan="4" BackgroundColor="Purple" Orientation="Horizontal">
+                    <Label Text="Row4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
+
+                <StackLayout Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0" Grid.RowSpan="3" BackgroundColor="Blue">
+                </StackLayout>
+                    <Label Text="Row5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+                <StackLayout Grid.Row="9" Grid.RowSpan="4" Grid.Column="1" BackgroundColor="Yellow">
+                    <Label Text="Row6" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"  BackgroundColor="Purple">
+                    <Label Text="Row7" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+               </StackLayout>
+                
+              
+                
             </Grid>
+                
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Column="0" Color="Red"/>
+                <BoxView Grid.Column="1" Color="Red"/>
+                <BoxView Grid.Column="2" Color="Red"/>  
+                <BoxView Grid.Column="3" Color="Red"/>  
+                <BoxView Grid.Row="1" Grid.Column="4" Color="Red"/>
+
+                <BoxView Grid.Row="1" Grid.Column="0" Color="Aqua"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Color="Aqua"/>
+                <BoxView Grid.Row="1" Grid.Column="2" Color="Aqua"/>
+                <BoxView Grid.Row="1" Grid.Column="3" Color="Aqua"/>
+                <BoxView Grid.Row="0" Grid.Column="4" Color="Aqua"/>
+                
+            </Grid>
+            <StackLayout Orientation="Vertical">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <BoxView Grid.RowSpan="2" Grid.Column="0" Color="Maroon"/>
+                    <BoxView Grid.Column="1" Color="Maroon"/>
+                    <BoxView Grid.Row="1" Grid.Column="1" Color="Maroon"/>
+                </Grid>
+            </StackLayout>
         </StackLayout>
 
     </ContentPage.Content>

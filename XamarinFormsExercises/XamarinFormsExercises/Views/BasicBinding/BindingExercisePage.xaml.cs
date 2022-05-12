@@ -7,6 +7,9 @@ namespace XamarinFormsExercises.Views.BasicBinding
         public BindingExercisePage()
         {
             InitializeComponent();
+            label2.SetBinding(Label.RotationProperty, new Binding("Value", source: slider2a));
+            label2.SetBinding(Label.OpacityProperty, new Binding("Value", source: slider2b));
+            label2.SetBinding(Label.FontSizeProperty, new Binding("Value", source: slider2c));
         }
     }
 }

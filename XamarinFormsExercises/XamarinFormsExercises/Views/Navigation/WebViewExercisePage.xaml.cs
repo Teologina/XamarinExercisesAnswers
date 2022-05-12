@@ -9,13 +9,21 @@ namespace XamarinFormsExercises.Views.Navigation
         {
             InitializeComponent();
          }
-        public WebViewExercisePage(string Url)
+        public WebViewExercisePage(string Url, string title)
         {
             InitializeComponent();
+            myWebView.Source = new UrlWebViewSource
+            {
+                Url = HttpUtility.UrlDecode(Url)
+            };
+            this.Name = title;
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Title = this.Title;
+            
         }
+        public string Name { get; set; }
     }
 }
